@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /***  FONTS ***/
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
@@ -10,14 +9,13 @@
   --field-background-color: #000;
 }
 
-/*** Parte Clara***/
 .light-theme {
   --page-background: linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #ffffff 65%,
-      rgba(255, 255, 255, 0.75) 100%
-    );
+    180deg,
+    #ffffff 0%,
+    #ffffff 65%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
   --header-background-color: #e3e3e3;
   --highlight-color: #000000;
   --featured-font-family: "Archivo", sans-serif;
@@ -29,14 +27,13 @@
   --footer-background-color: #b5bbbf;
 }
 
-/*** Parte Escura***/
 .dark-theme {
   --page-background: linear-gradient(
-      180deg,
-      #050000 0%,
-      #130404 65%,
-      rgba(19, 1, 1, 0.75) 100%
-    );
+    180deg,
+    #050000 0%,
+    #130404 65%,
+    rgba(19, 1, 1, 0.75) 100%
+  );
   --header-background-color: #220f0f;
   --highlight-color: #ffffff;
   --featured-font-family: "Rubik Glitch", sans-serif;
@@ -48,14 +45,35 @@
   --footer-background-color: #000;
 }
 
-/***Padrões***/
+.dark-theme button,
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+  letter-spacing: 5px;
+  font-weight: normal;
+}
+
+.dark-theme .invert-element {
+  -webkit-transform: rotateZ(180deg) scaleX(-1);
+          transform: rotateZ(180deg) scaleX(-1);
+}
+
+/***  GENERIC STYLES ***/
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-h1, h2, h3 {
+body {
+  background: var(--page-background);
+}
+
+h1,
+h2,
+h3 {
   font-family: var(--featured-font-family);
   font-size: 3rem;
   color: var(--primary-color);
@@ -67,8 +85,11 @@ p {
   color: var(--highlight-color);
 }
 
-p, input, textarea, label {
-  font-family: 'Libre Baskerville', serif;
+p,
+input,
+textarea,
+label {
+  font-family: "Libre Baskerville", serif;
 }
 
 button {
@@ -78,12 +99,60 @@ button {
   font-family: var(--featured-font-family);
   font-size: 1.25rem;
   text-transform: uppercase;
+  cursor: pointer;
   -webkit-transition: background 1s;
   transition: background 1s;
-  cursor: pointer;
 }
 
-/*** Header Styles***/
+main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--page-background) no-repeat, url("../images/backgrounds/florest.png") no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+input,
+textarea {
+  border: 2px solid var(--primary-color-contrast);
+  background-color: var(--field-background-color);
+  color: var(--primary-color-contrast);
+  padding: 8px;
+}
+
+input,
+textarea {
+  margin-bottom: 24px;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: black;
+}
+
+/*** HEADER STYLES ***/
 header {
   background-color: var(--header-background-color);
   min-height: 850px;
@@ -111,7 +180,7 @@ header::before {
   background-position: center 90%;
   -webkit-filter: saturate(0);
           filter: saturate(0);
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .header-content {
@@ -139,7 +208,7 @@ header::before {
   color: var(--primary-color-contrast);
 }
 
-/*** Estilo do pessoal do mundo invertido entre header e main***/
+/*** WORLD CHARACTERS STYLES ***/
 .world-characters {
   width: 100%;
   max-width: 900px;
@@ -153,5 +222,33 @@ header::before {
   background-image: url(../images/characters/kids-on-the-bike.svg);
   background-repeat: no-repeat;
   background-position: bottom;
+}
+
+.world-characters#bottom-characters {
+  height: 500px;
+  max-width: 100%;
+  background-color: #808080;
+  top: 3px;
+  -webkit-transform: rotateZ(180deg) scaleX(-1);
+          transform: rotateZ(180deg) scaleX(-1);
+  position: relative;
+  background-image: url(../images/characters/inverted-world-monster.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 0.43;
+}
+
+main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */

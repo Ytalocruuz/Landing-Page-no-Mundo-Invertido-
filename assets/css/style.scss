@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
-
 /***  VARIABLES & THEMES ***/
 
 :root {
   --primary-color: #cf0f0f;
   --primary-color-contrast: #ffffff;
   --field-background-color: #000;
+  --background-fund-color : #808080;
 }
 
 .light-theme {
@@ -59,7 +59,7 @@
   transform: rotateZ(180deg) scaleX(-1);
 }
 
-/***  ESTILOS GENÉRICOS ***/
+/***  GENERIC STYLES ***/
 
 * {
   margin: 0;
@@ -75,14 +75,17 @@ h1,
 h2,
 h3 {
   font-family: var(--featured-font-family);
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--primary-color);
   text-transform: uppercase;
   margin-bottom: 40px;
+  font-weight: 900;
 }
 
 p {
   color: var(--highlight-color);
+  font-size: 17px;
+  font-weight: 700;
 }
 
 p,
@@ -98,6 +101,7 @@ button {
   font-weight: 900;
   font-family: var(--featured-font-family);
   font-size: 1.25rem;
+  border-radius: 10px;
   text-transform: uppercase;
   cursor: pointer;
   transition: background 1s;
@@ -205,22 +209,9 @@ header::before {
     height: 100%;
     background-color: var(--character-top-image-color);
     bottom: -3px;
-    background-image: url(../images/characters/kids-on-the-bike.svg);
+    background-image: url("../images/characters/kids-on-the-bike.svg");
     background-repeat: no-repeat;
     background-position: bottom;
-  }
-
-  .world-characters#bottom-characters {
-    height: 500px;
-    max-width: 100%;
-    background-color:  #808080;
-    top: 3px;
-    transform: rotateZ(180deg) scaleX(-1);
-    position: relative;
-    background-image: url(../images/characters/inverted-world-monster.svg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    opacity: 0.43;
   }
 
   main {
@@ -256,6 +247,22 @@ header::before {
   max-width: 300px;
  }
 
+ /* imagem  */
+
+ .world-characters#bottom-characters {
+  height: 200px;
+  max-width: 100%;
+  background-color:  var(--primary-color-contrast);
+  // top: 3px;
+  // transform: rotateZ(180deg) scaleX(-1);
+  position: relative;
+  align-items: center;
+  background-image: url("../images/backgrounds/logo-stranger-things-hd-.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  
+}
+
  /* Section 02 */
 
  #section-stranger-things-trailer{
@@ -287,17 +294,33 @@ header::before {
   border-image-slice: 10;
  }
 
+ /* imagem  A 11 */
+
+ #A11-background{
+  height: 500px;
+  max-width: 100%;
+  background-color:  var(--primary-color-contrast);
+  top: 3px;
+  position: relative;
+  background-image: url("../images/backgrounds/a11-stranger-t.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 0.7;
+ }
+
  /* Section 03 */
 
  #section-stranger-things-gallery{
+  margin-top: 40px;
   width: 100%;
   justify-content: center;
   background: url(../images/backgrounds/lamps.png) 130% / 50% no-repeat;
-
  }
+
 
  #section-stranger-things-gallery .container{
    width: 100%;
+   z-index: 2;
  }
 
  #section-stranger-things-gallery .container h2{
@@ -327,6 +350,20 @@ header::before {
 
 }
 
+/* Imagem - garotos bicicleta */
+
+ #garats-bicicle{
+  height: 500px;
+  max-width: 100%;
+  background-color:  var(--primary-color-contrast);
+  top: 3px;
+  position: relative;
+  background-image: url("../images/backgrounds/garots.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 0.7;
+ }
+
 /* Section 04 */
 
 #section-form{
@@ -338,12 +375,13 @@ header::before {
 
 #section-form h2{
   width: 600px;
+  
 }
 
 #section-form .section-form h3{
   color: var(--highlight-color);
    flex-basis: 30%; //pode aplixar altura e largura 
-   text-align: right;
+   text-align: center;
    margin: 0;
 }
 
@@ -381,6 +419,18 @@ header::before {
   background-color: var(--primary-color);
   color: var(--primary-color-contrast);
   text-align: left;
+  border-radius: 20px;
+}
+
+#section-form .form-container form label{
+  font-weight: 700;
+}
+#section-form .form-container form input{
+   border-radius: 10px;
+}
+
+#section-form .form-container form #txtCharacter{
+  border-radius: 10px;
 }
 
 #section-form .form-container form button {
